@@ -1,6 +1,6 @@
 <?php
 /* This code is for html to wordpress convert(only homepage) */
-<============================================================================================================================>
+/* <=================================================================> */
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes('xhtml'); ?>>
 	<head>
@@ -69,12 +69,9 @@ in function.php=>
 			register_nav_menu( 'main_menu', __( 'Main Menu', 'bilanti' ) );
 		}
 	}
-	
-	
-	
 
 /* To make dynamic mainmenu(dropdown menu) */
-==============================================
+/* <=================================================================> */
  in index.php=>
 				<?php
 				if (function_exists('wp_nav_menu')) {
@@ -121,16 +118,13 @@ include_once( 'includes/breadcoumb.php' );
 		echo '</ul>';
 	}
 	
-	
-	
 /* This code is for dynamic footer menu */
 	if you have footer menu code in index=>
-	=========================================
+/* <=================================================================> */
 	<?php wp_nav_menu( array( 'theme_location' => 'main_menu') ); ?>
 	in funtion.php=>
 	register_nav_menu( 'menu_footer', __( 'Footer Menu', 'bilanti' ) );
-	
-	
+
 	
 /* To make dynamic widgeds */
 	===================================
@@ -155,7 +149,7 @@ include_once( 'includes/breadcoumb.php' );
 		}
 	add_action('widgets_init', 'bilanti_widget_areas');
 	
-<============================================================================================================================>
+<=========================================================>
 	
 /* This code is for making any template for the theme pages =>
 1. We need to copy(index.php) for making this new pages.
@@ -167,7 +161,7 @@ in template pages=>
 Template Name: (pages name) Template
 */
 
-<============================================================================================================================>
+<===========================================================>
 
 
 /* This code is for (post.php) but it is no page, All (post.php) code is set up in (index.php) for show update wordpress post in my "visitor page" */
@@ -226,7 +220,7 @@ Post Information Query in index.php
 					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts') ); ?></div>
 					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>') ); ?></div>
 					
-<============================================================================================================================>
+<==============================================================>
 
 /* This is(page.php), which is use for my "home page". If I make a page(no template) that has no content, then this page show this (page.php) page("home page") 
 */
@@ -235,7 +229,7 @@ Post Information Query in index.php
 ===================================
 It is your home page that you already dynamic at above this page.
 
-<============================================================================================================================>
+<================================================================>
 
 /* This is(single.php), which is use for show per wordpress post in "single page".
 In this single page we need a "comment box", so for "comment box" code is given below after (single.php)
@@ -253,7 +247,7 @@ In this single page we need a "comment box", so for "comment box" code is given 
 				<h3><?php _e('404 Error: Not Found'); ?></h3>
 				<?php endif; ?>
 
-======================================================================
+=============================================================
 
 /* This code is for (comment.css) It is a css file, so you keep this code in extra css file(comments.css). This file has a code of (functions.php) that is given in below after (comment.css). You need to link this css in (header.php) */
 =================================
@@ -357,7 +351,7 @@ In (functions.php)=>
 		}
 		add_action( 'wp_enqueue_scripts', 'comment_scripts' );
 		
-<=============================================================================================================================>
+<===============================================================>
 
 /* This is (archive.php), which is use for finding "post category". That means, you give a post at any category, then if you enter your category menu, then you see that all post in this category show in the page. In (archive.php) you need to call (post-loop.php) because, your all post show from(post-loop.php)
 */
@@ -423,8 +417,8 @@ For specific page for creating special archive page, this is the code:
 					<?php query_posts('post_type=post&category_name=News&post_status=publish&posts_per_page=2&paged='. get_query_var('paged')); ?>
 					<?php get_template_part('post-loop'); ?>
 						
-=========================
-<=============================================================================================================================>
+
+<============================================================>
 
 /* This is "readmore button", which is use for show details a content in "single page". For this button you have to select fixed words that you show want to your "post page", then if you click this button, you show that in "single page". It has a code of (functions.php) that is given below after "readmore button" code of in (post-loop.php)
 */
@@ -450,7 +444,7 @@ Usage: <?php echo excerpt('15,as my wish'); ?>
 
 	}
 	
-<=============================================================================================================================>
+<===========================================================>
 
 /* This is "featured images", which is use for your "post images" that signed a image for your post. It has a code of (functions.php) that is given in below after "featured images" code of (post-loop.php) & (single.php).
 */
@@ -473,7 +467,7 @@ For enable featured image==========
 			add_image_size( 'post-image', 150, 150, true );
 			add_image_size( 'single-post-image', 960, 300, true ); <If you need featured images in your "single page" >
 			
-<=============================================================================================================================>
+<=======================================================>
 
 /* This is "Query post in specific category" that means, I want to make a new templates includes a page. In the page your all post show in your category system, you give a post which category, that category name is show there in heading type and then that categories all post show in under the heading by listing. For this "Query post in specific category" you need to call (post-loop.php)
 */
@@ -483,7 +477,7 @@ For enable featured image==========
  <?php query_posts('post_type=post&category_name=news&post_status=publish&posts_per_page=10&paged='. get_query_var('paged')); ?>
  <?php get_template_part('post-loop'); ?>
  
-<=============================================================================================================================>
+<==========================================================>
  
 /* This is "custom post fields tips", which is use for linking your "featured images", that means, If a post have "featured images" then your "selected url" show that post. And if post have not any "featured images" that show your defaulf post link.
 */
@@ -515,7 +509,7 @@ if ( $url ) {
 }
 ?>
 
-<=============================================================================================================================>
+<===========================================================>
 
 /* This is "Testimonial page", which is use for clients. For this "testimonial page" we have to make a new new template and set up code and call (post.php). It has a code of (functions.php) that is given in below after "testimonial page" code in (new testimonial template)
 */
@@ -527,7 +521,7 @@ if ( $url ) {
 =============================
 /* This code is for "Testimonial page or any type of page that you want to make like the dashboard different items in wordpress, you can see there." in (functions.php) */
 
-/* Register Custom Post Types********************************************/
+/* Register Custom Post Types*********************************/
  This code is for (function.php)
  =================================================
         add_action( 'init', 'create_post_type' );
@@ -557,7 +551,7 @@ if ( $url ) {
                 );
         }
 		
-<=============================================================================================================================>
+<==========================================================>
 
 /* This is "Option tree full system", which is use for changing logo, slider, and others etc. You need it here:
 1. You need to download "Option tree"
@@ -636,14 +630,14 @@ Condtional Data
 
 <?php get_option_tree( 'facebook', '', 'true' ); ?>
  
-<=============================================================================================================================>
+<==========================================================>
 
 /* This is (404 Not Found Page), which is use for, if any visitor search a wrong address, then the page show that (404 Not Found page). This page need to stylize in css. 
 */
 1. You need to copy any "template page"
 2. Then you delete the template pages content and stylize this like as paragraph.
 3. You have to choice any (404 Not Found Page) images or template in google.
-<=============================================================================================================================>
+<============================================================>
 
 
 Thank you so much.
